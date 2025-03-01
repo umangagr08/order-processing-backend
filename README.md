@@ -26,7 +26,15 @@ cd order-processing-backend
 sudo docker-compose up --build
 ```
 
-This will start the FastAPI app, PostgreSQL, and the order processing worker.
+### **3. To run the script of table creation and inserting the load to table**
+#### Note: Run this below commands after your application is running.
+#### PS: Password is password
+```bash
+psql -h localhost -U postgres -d orders_db -f schema.sql
+psql -h localhost -U postgres -d orders_db -f data_population.sql
+```
+
+This will start the FastAPI app, PostgreSQL, the order processing worker and inserts the sample data to the table
 
 ---
 
