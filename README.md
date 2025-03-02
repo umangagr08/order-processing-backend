@@ -130,7 +130,13 @@ curl --location --request GET 'http://localhost:8000/api/v1/metrics'
 
 ## Assumptions
 
-- Processing takes **\~2 seconds per order**.
+### 1. Database design:
+- Order statuses are fixed for now (Pending, Processing and completed)
+- Use case for adding item details is not there like quantity, price , item name etc.
+- Filtering orders on the basis of order id wont be there.
+
+### 2. Worker
+- Processing takes **\~2 seconds per order**. Seorate function for it that just sleeps for 2 sec.
 - Only 1000 concurrent requests are coming to the server at max. Accordingly adjust workers and connection pool from config.
 
 ---

@@ -14,7 +14,7 @@ async def create_order(order_id):
         order_data = {
             "order_id": f"ORD{order_id}",
             "user_id": random.randint(100, 200),
-            "item_ids": [random.randint(1, 50) for _ in range(3)],  # Random 3 items
+            "item_ids": [random.randint(1, 50) for _ in range(3)],
             "total_amount": round(random.uniform(10, 100), 2),
             "status": "Pending"
         }
